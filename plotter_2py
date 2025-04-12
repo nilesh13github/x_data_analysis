@@ -1,0 +1,24 @@
+import pandas as pd
+from sklearn.feature_extraction.text import TfidfVectorizer
+import plotly.express as px
+
+df = pd.read_csv("preprocessed_full.csv")
+
+high_risk_df = df[df['sentiment'] == 'high']
+
+vectorizer = TfidfVectorizer(stop_words='english', max_features=50)
+X = vectorizer.fit_transform(high_risk_df['tweet'])
+
+tfidf_scores = zip(vectorizer.get_feature_names_out(), X.sum(axis=0).tolist()[0])
+sorted_terms = sorted(tfidf_scores, key=lambda x: x[1], reverse=True)
+
+
+top_terms_df = pd.DataFrame(sorted_terms[:10], columns=['term', 'score'])
+
+fig = px.bar(top_terms_df, x='term', y='score', title='Top High-Risk TF-IDF Terms',
+             labels={'term': 'Term', 'score': 'TF-IDF Score'},
+             color='score', color_continuous_scale='Reds')
+
+fig.write_image("words_vs_risk.jpeg", scale=2)
+
+fig.show()
