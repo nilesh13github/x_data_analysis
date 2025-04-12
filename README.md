@@ -65,7 +65,25 @@
 
 ![sentiment_level](https://github.com/user-attachments/assets/1db905da-7724-457a-8544-a36fe040441b)
 
-### 4 → `data_plotter_2.py`
+### 4 → `data_plotter_2.py` and `data_analyzer_1.py`
+-`data_analyzer_1.py`
+- Loads the final preprocessed dataset from `preprocessed_full.csv`.
+- Filters the dataset to include only tweets with **`high`** sentiment (potential high-risk posts).
+- Applies **TF-IDF vectorization** to extract the most relevant terms from high-risk tweets:
+  - Uses `TfidfVectorizer` with English stop words and `max_features=50` (you can increase `max_features` for more terms).
+  - Computes the TF-IDF score for each term across all high-risk tweets.
+- Sorts the terms based on their TF-IDF scores in descending order and prints the top 10 terms with the highest scores.
+- 
+-`data_plotter_2.py`
+- Loads the final preprocessed dataset from `preprocessed_full.csv`.
+- Filters the dataset to include only tweets with **`high`** sentiment (potential high-risk posts).
+- Applies **TF-IDF vectorization** to extract the most relevant terms from high-risk tweets:
+  - Uses `TfidfVectorizer` with English stop words and `max_features=50` (you can increase `max_features` for more terms).
+  - Computes the TF-IDF score for each term across all high-risk tweets.
+- Sorts the terms based on their TF-IDF scores in descending order and prints the top 10 terms with the highest scores.
+
+> This analysis identifies the most significant words associated with high-risk tweets, providing insights into language patterns indicative of a mental health crisis.
+'
 
 - Loads the final preprocessed dataset from `preprocessed_full.csv`.
 - Filters the dataset to include only tweets labeled with **`high`** sentiment (potential high-risk posts).
