@@ -158,5 +158,21 @@
 
 ![Screenshot from 2025-04-09 01-07-57](https://github.com/user-attachments/assets/1cd792a8-3379-426f-93fd-909353f69a57)
 
+### 9 → `table_plot.py`
+
+- **Creates a PDF report** with a table displaying the top countries based on tweet counts from the dataset.
+- The data includes:
+  - S.No.
+  - Country Code
+  - Count of high-risk tweets
+  - Country Name
+- Uses the **ReportLab** library to generate the PDF:
+  - Sets the page size to **letter**.
+  - Creates a **table** and applies styles (background color, text color, alignment, font, padding).
+  - Includes **gridlines** around the table for better readability.
+- Saves the generated PDF as `Top_Countries_Report.pdf`.
+
+> This script generates a clean, formatted PDF report listing the top countries with the highest counts of high-risk tweets, which can be used for reporting or analysis.
 
 
+![Screenshot from 2025-04-12 13-31-28](https://github.com/user-attachments/assets/88a9f669-dbff-4441-a5bc-f576af7eb6c5)
