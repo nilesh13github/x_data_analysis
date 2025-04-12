@@ -158,7 +158,7 @@
 
 ![Screenshot from 2025-04-09 01-07-57](https://github.com/user-attachments/assets/1cd792a8-3379-426f-93fd-909353f69a57)
 
-### 9 → `table_plot.py`
+### 8 → `table_plot.py`
 
 - **Creates a PDF report** with a table displaying the top countries based on tweet counts from the dataset.
 - The data includes:
