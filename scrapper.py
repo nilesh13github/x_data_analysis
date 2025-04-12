@@ -96,17 +96,18 @@ verification_input = driver.find_element(By.XPATH, value="//input[@name='text']"
 next_button_2 = driver.find_element(By.XPATH, value="//button[.//span[text()='Next']]")
 
     #sending keys to verification
-verification_input.send_keys("nileshpand309")
+    #User name of the twitter id, like: nilesh309 
+verification_input.send_keys("UserName")
 next_button_2.click()
 
 time.sleep(7)
 
-    #password 
+
 password = driver.find_element(By.XPATH, value="//input[@name='password']")
 
 login_buttot = driver.find_element(By.XPATH, value="//button[@data-testid='LoginForm_Login_Button']")
-    #passing password
-password.send_keys("Nilesh@325a")
+    #password 
+password.send_keys("Password")
 
 
 login_buttot.click()
